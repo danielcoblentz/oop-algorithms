@@ -71,36 +71,3 @@ class Queue {
    }
 }
 
-class QueueApp {
-   public static void main(String[] args) {
-       Queue theQueue = new Queue(5); // queue holds 5 items
-
-       theQueue.insert(10); // insert items
-       theQueue.display();
-       theQueue.insert(20);
-       theQueue.display();
-       theQueue.insert(30);
-       theQueue.display();
-       theQueue.insert(40);
-       theQueue.display();
-
-       theQueue.remove(); // remove items
-       theQueue.display();
-       theQueue.remove();
-       theQueue.display();
-       theQueue.remove();
-       theQueue.display();
-
-       theQueue.insert(50); // insert more items
-       theQueue.insert(60);
-       theQueue.insert(70);
-       theQueue.insert(80);
-       theQueue.display();
-
-       while (!theQueue.isEmpty()) { // remove and display all items
-           long n = theQueue.remove();
-           System.out.print(n + " ");
-       }
-       System.out.println();
-   }
-}
