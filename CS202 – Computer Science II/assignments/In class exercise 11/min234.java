@@ -307,8 +307,18 @@ class Tree234
 // -------------------------------------------------------------
    public long getMin()
       {//Add your code here
-        
-      }
+     // Traverse to the leftmost node and return its smallest item
+     Node current = root;
+     while(current.getChild(0) != null) {
+        current = current.getChild(0);
+     }
+     // the smallest item should be at index 0
+     DataItem di = current.getItem(0);
+     if (di != null)
+        return di.dData;
+     else
+        return -1; // or throw exception if no items
+     }
 // -------------------------------------------------------------
    }  // end class Tree234
 
