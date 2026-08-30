@@ -34,7 +34,8 @@ A single-character input is handled as an edge case by assigning the code `0` ra
 
 **Part III - encode, decode, and compression stats.**
 The file is read a second time and each character is replaced by its code.
-This two-pass approach means the whole file never has to be held in memory, which matters for large inputs; a one-pass method is possible but costs more memory on average.
+This two-pass approach means the file's characters never have to be buffered between counting and encoding, which matters for large inputs; a one-pass method is possible but costs more memory on average.
+The encoded output itself is still assembled in memory as one `StringBuilder`.
 `decodeMessage` walks the tree bit by bit from the root, emitting a character at each leaf and stopping at `+`, then reverses the `-` and `!` substitutions.
 Finally it reports original size, encoded size, and the ratio between them.
 
