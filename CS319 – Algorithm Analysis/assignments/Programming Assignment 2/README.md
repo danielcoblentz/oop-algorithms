@@ -12,14 +12,14 @@ This java program demonstrates and compares the performance of **Linear Search**
    - We generate another array (`long[]`) of size `m`, also filled with random values. each value will be searched for in the data array using both searching algorithms mentioned above.
 
 3. **Time Measurement**  
-   - A `Stopwatch` class is used to measure how long it takes to run searches using linear search, and then searches using binary search. (measured in nano seconds becuase if using seconds most of the time(s) will be zero)
+   - A `Stopwatch` class is used to measure how long it takes to run searches using linear search, and then searches using binary search. It reads `System.nanoTime()` rather than the millisecond clock, because at these sizes a millisecond clock reports zero for most of the runs.
   
 
 
 4. **Output**  
    - Data size (`n`) and number of search entries (`m`)
    - Number of found items in both searches
-   - Total time taken (in nanoseconds) for each search algorithm and the average
+   - Total time taken in seconds for each search algorithm, and the average per search
 
 
 
@@ -32,5 +32,8 @@ This java program demonstrates and compares the performance of **Linear Search**
 2. **Run the program**  
    ```bash
    javac Search.java
+   java Search
    ```
-   - or click `run` if using VS-Code
+   - or click `run` if using VS Code
+
+The file named `260209` in this folder is the `Stopwatch.java` reference class from the course textbook site, downloaded without its extension. `Search.java` does not use it; it has its own nested `Stopwatch`.

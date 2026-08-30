@@ -14,7 +14,7 @@ public class Search {
 
         public double elapsedTime() {
             long now = System.nanoTime();
-            return (now - start) / 1_000_000_000.0; // convert to  nonoseconds (when using normal seconds most of the reuslts were zero except for hte final search so i converted to nano for better precision)
+            return (now - start) / 1_000_000_000.0; // convert to seconds (nanoTime is the source clock because the millisecond clock reported zero for most of these runs)
         }
     }
 
