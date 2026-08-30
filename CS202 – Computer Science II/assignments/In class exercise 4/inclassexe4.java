@@ -24,12 +24,12 @@ System.out.println(nodup(list));
     }
 
     //Part A)
-    public static int max(ArrayList<Integer> List){ // int[] a
+    public static int max(ArrayList<Integer> list){ // int[] a
 
-        int max = List.get(0);
-        for(int i =0;i<List.size();i++){
-            if(List.get(i)>max)
-            max=List.get(i);
+        int max = list.get(0);
+        for(int i =0;i<list.size();i++){
+            if(list.get(i)>max)
+            max=list.get(i);
         }
 return max;
     }

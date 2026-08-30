@@ -85,15 +85,15 @@ public class assignment1 {
 
 
  // helper method to appily operatotrs and return the correct val also handle errorrs
-    private static double applyOperator(char operator, double b, double a) {
+    private static double applyOperator(char operator, double right, double left) {
         switch (operator) {
 
-            case '+': return a + b;
-            case '-': return a - b;
-            case '*': return a * b;
+            case '+': return left + right;
+            case '-': return left - right;
+            case '*': return left * right;
             case '/': 
-                if (b == 0) throw new RuntimeException("cannot divide by zero!");
-                return a / b;
+                if (right == 0) throw new RuntimeException("cannot divide by zero!");
+                return left / right;
             default: throw new RuntimeException("invalid operator!");
 
         }
