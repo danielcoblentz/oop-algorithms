@@ -1,4 +1,4 @@
-public class myStack {
+public class MyStack {
    
         //data fields
 private int[] stack; // declaration
@@ -8,7 +8,7 @@ private int top = -1; // integer value which value is currently at the top of th
 
 
         //methods
-public myStack (int s){
+public MyStack (int s){
     maxsize=s;
     stack = new int[maxsize]; //enstanciation
     top=-1;

@@ -6,16 +6,18 @@ It was previously maintained as a separate `HuffmanEncoder` repository and was m
 
 ## What it does
 
-`huffman.java` reads a text file, builds a character frequency table, constructs a Huffman tree, generates the code table, encodes the file, decodes it back, and reports a compression ratio.
+`Huffman.java` reads a text file, builds a character frequency table, constructs a Huffman tree, generates the code table, encodes the file, decodes it back, and reports a compression ratio.
 
-Four characters are given special handling so the encoded stream stays printable and self-terminating:
+Whitespace is substituted before counting so the frequency table and the code table stay printable, and a marker character terminates the message:
 
-| Character in file | Encoded as |
+| Character in file | Stored in the table as |
 |---|---|
 | space | `-` |
 | newline | `!` |
-| period | `.` |
-| end of message | `+` |
+| carriage return | dropped |
+| end of message | `+`, appended once |
+
+Every other character, the period included, is counted as itself.
 
 ## How it works
 
@@ -32,15 +34,16 @@ A single-character input is handled as an edge case by assigning the code `0` ra
 
 **Part III - encode, decode, and compression stats.**
 The file is read a second time and each character is replaced by its code.
-This two-pass approach means the whole file never has to be held in memory, which matters for large inputs; a one-pass method is possible but costs more memory on average.
+This two-pass approach means the file's characters never have to be buffered between counting and encoding, which matters for large inputs; a one-pass method is possible but costs more memory on average.
+The encoded output itself is still assembled in memory as one `StringBuilder`.
 `decodeMessage` walks the tree bit by bit from the root, emitting a character at each leaf and stopping at `+`, then reverses the `-` and `!` substitutions.
 Finally it reports original size, encoded size, and the ratio between them.
 
 ## How to run
 
 ```
-javac huffman.java
-java huffman
+javac Huffman.java
+java Huffman
 ```
 
 The input path is hardcoded near the top of `main`:
@@ -65,16 +68,16 @@ That is a rewrite rather than a patch, and it was out of scope for the assignmen
 
 | File | Purpose |
 |---|---|
-| `huffman.java` | Complete implementation, all three parts |
-| `test/filetoencode.txt` | Sample input |
-| `test/freqfilespec.txt` | Expected frequency table format |
-| `test/codespec.txt` | Expected code table format |
-| `test/msgspec.txt` | Expected encoded message format |
-| `test/encodedfile.bin` | Instructor-supplied reference file |
-| `PA4.pdf` | Assignment handout (in Part I) |
+| `Huffman.java` | Complete implementation, all three parts |
+| `test/filetoencode.txt` | The input the program reads by default |
+| `test/msgspec.txt` | Longer sample message the two spec files below are built from |
+| `test/freqfilespec.txt` | Frequency table the assignment expects for `msgspec.txt` |
+| `test/codespec.txt` | Code table the assignment expects for `msgspec.txt` |
+| `test/encodedfile.bin` | Reference binary supplied with the assignment |
+| `PA4.pdf` | Assignment handout, kept in the Part I folder |
 
 ## Provenance
 
 The implementation is mine.
-The assignment specification, the `test/` specification files, and `encodedfile.bin` were supplied with the course.
+The assignment specification and the whole `test/` directory came with the course; it is the contents of `test(1).zip` in the Part I folder.
 Parts I and II in the sibling folders are earlier drafts kept for history; this folder holds the version that supersedes them.

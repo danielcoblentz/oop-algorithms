@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class huffman {
+public class Huffman {
     // class for HT nodes 
     static class Node {
         char ch;

@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class huffman {
+public class Huffman {
     public static void main(String[] args) {
         String filePath = "test/msgspec.txt";  // link to demo file (change path as needed for other files/testing program)
         Map<Character, Integer> frequencyTable = new HashMap<>();
