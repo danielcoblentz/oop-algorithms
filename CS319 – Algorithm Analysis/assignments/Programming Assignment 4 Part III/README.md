@@ -6,7 +6,7 @@ It was previously maintained as a separate `HuffmanEncoder` repository and was m
 
 ## What it does
 
-`huffman.java` reads a text file, builds a character frequency table, constructs a Huffman tree, generates the code table, encodes the file, decodes it back, and reports a compression ratio.
+`Huffman.java` reads a text file, builds a character frequency table, constructs a Huffman tree, generates the code table, encodes the file, decodes it back, and reports a compression ratio.
 
 Four characters are given special handling so the encoded stream stays printable and self-terminating:
 
@@ -39,8 +39,8 @@ Finally it reports original size, encoded size, and the ratio between them.
 ## How to run
 
 ```
-javac huffman.java
-java huffman
+javac Huffman.java
+java Huffman
 ```
 
 The input path is hardcoded near the top of `main`:
@@ -65,7 +65,7 @@ That is a rewrite rather than a patch, and it was out of scope for the assignmen
 
 | File | Purpose |
 |---|---|
-| `huffman.java` | Complete implementation, all three parts |
+| `Huffman.java` | Complete implementation, all three parts |
 | `test/filetoencode.txt` | Sample input |
 | `test/freqfilespec.txt` | Expected frequency table format |
 | `test/codespec.txt` | Expected code table format |
