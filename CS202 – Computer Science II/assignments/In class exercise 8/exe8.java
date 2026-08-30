@@ -1,6 +1,6 @@
 public class exe8 {
     public static void main(String[] args) {
-        myStack s1 = new myStack(5);
+        MyStack s1 = new MyStack(5);
 
         if (s1.isEmpty())
         System.out.println("the stack is empty!");
