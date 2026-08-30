@@ -6,12 +6,12 @@ public class Exercise10{
     public static void main(String[] args) {
         System.out.println("Enter the number of nodes on the BST: ");
         Scanner scan = new Scanner(System.in);
-        int t = scan.nextInt();
+        int nodeCount = scan.nextInt();
         
         System.out.println("Enter each node's value: ");
         BST tree = new BST();
         
-        while(t-- > 0) {
+        while(nodeCount-- > 0) {
             int data = scan.nextInt();
             tree.insert(data);
         }

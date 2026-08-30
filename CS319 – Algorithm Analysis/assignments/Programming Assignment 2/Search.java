@@ -87,7 +87,7 @@ public class Search {
                 }
             }
             double totalLinearTime = totalLinearTimer.elapsedTime();
-            double avgLinearTimePerN = totalLinearTime / m; // average per dataset size
+            double avgLinearTimePerSearch = totalLinearTime / m; // average cost of one search
 
 
 
@@ -100,7 +100,7 @@ public class Search {
                 }
             }
             double totalBinaryTime = totalBinaryTimer.elapsedTime();
-            double avgBinaryTimePerN = totalBinaryTime / m; //  average per dataset size
+            double avgBinaryTimePerSearch = totalBinaryTime / m; //  average cost of one search
 
 
                 // print results to user for this dataset size
@@ -111,8 +111,8 @@ public class Search {
             System.out.println("# found in BS: " + foundBinary);
             System.out.println("total time (LS): " + totalLinearTime + " seconds");
             System.out.println("total time (BS): " + totalBinaryTime + " seconds");
-            System.out.println("average time per search for LS (n = " + n + "): " + avgLinearTimePerN + " seconds");
-            System.out.println("average time per search for BS (n = " + n + "): " + avgBinaryTimePerN + " seconds");
+            System.out.println("average time per search for LS (n = " + n + "): " + avgLinearTimePerSearch + " seconds");
+            System.out.println("average time per search for BS (n = " + n + "): " + avgBinaryTimePerSearch + " seconds");
             System.out.println(); // separate previous runs from the next (can add more for clarity if terminal gets voerloaded with info)
         }
     }
